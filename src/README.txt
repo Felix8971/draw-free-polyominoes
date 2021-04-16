@@ -24,3 +24,5 @@ debug: node --inspect-brk server
 you will see "WebSockets request was expected"
 
 open the console (F12) and click on the  green icon
+
+Demo: http://felixdebon.com/draw-free-polyominoes/

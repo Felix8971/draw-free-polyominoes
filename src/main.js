@@ -1,12 +1,6 @@
 "use strict";
 //Calcul number of free polyominoes (or square animals) with n cells
-//const { getInitSquares } = require('./initSquares.js');
-//import CTE from './constants.js';
-//import { isImportEqualsDeclaration } from "typescript";
-//Objetive: Find in how many way we can arrange N tiles in the plan 
-// - Every tile must be adjacent to at least on other tile 
-// (tetris for n=4)
-//input:
+
 /*
    Convention notation matrice:
    M = [
