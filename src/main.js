@@ -353,7 +353,6 @@ var getNewGeneration = function (generation) {
     const nbcellLabel = document.createElement('div');
     nbcellLabel.className = 'nb-cell';
     document.getElementById('main').appendChild(nbcellLabel);
-    //nbcellLabel.innerHTML += "N = ";
     nbcellLabel.innerHTML += (N + 1) + ' cells: ';
     nbcellLabel.innerHTML += g.length + ' free polyominoes';
 
