@@ -414,13 +414,14 @@ console.log(generationList);
 
 runBtn && runBtn.addEventListener("click", function (event) {
     let runBtn = document.getElementById("run-btn");
-    runBtn.innerHTML = "Running...";
-    document.getElementById('main').innerHTML = 'Loading...';
+    runBtn.innerHTML = '<div class="loader"></div>';
+    document.getElementById('main').innerHTML = 'Wait please...';
     setTimeout(() => {
         generationList = [];
         N = 0;
         document.getElementById('main').innerHTML = `
         <div id="log">
+            Log:
             <div>1 cell: found 1 free polyominoes in 0 s</div>
         </div>
         <div class="separator-line"></div>

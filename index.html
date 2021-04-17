@@ -25,10 +25,10 @@
         <p>In this page I calculate the free polyominoes in real time with a simple (and relatively inneficient)
             algorythm.
             The polyominoes of the generation N + 1 are calculated from the generation N. For each polyomino of
-            the generation N we try to add a square and create a new element for the generation N + 1.
+            the generation N we try to add a square in every possible positions in order to create a new element for the
+            generation N + 1.
             The polyomino created (and all its equivalent form found by translation, rotation, reflection) is compared
-            to the
-            polyominoes already found to determine if it's a new element. </p>
+            to the polyominoes already found to determine if it's a new element.</p>
 
         <a href="https://github.com/Felix8971/draw-free-polyominoes/tree/master" target="_blank">Source code on
             Github</a>
@@ -50,7 +50,9 @@
             <option value="12">12</option>
             <option value="13">13</option>
         </select>
-        <button id="run-btn">Running...</button>
+        <button id="run-btn">
+            <div class="loader"></div>
+        </button>
     </div>
     <div class="separator-line"></div>
 
