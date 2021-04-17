@@ -327,7 +327,8 @@ var getNewGeneration = function (generation) {
     }
     //print result
     var delta_t = (Date.now() - t0) / (1000);
-    console.log("Generation ", N, ": found ", newGeneration.length, " free polyominoes in ", delta_t, "s");
+    document.getElementById('log').innerHTML += `<div>${N + 1} cells: found  ${newGeneration.length} free polyominoes in  ${delta_t} s<div>`;
+    console.log((N + 1) + " cells: found ", newGeneration.length, " free polyominoes in ", delta_t, "s");
     //console.log("Generation ", N, newGeneration);
     let g = []
     newGeneration.map(x => {
@@ -356,6 +357,8 @@ var getNewGeneration = function (generation) {
 
     //test d'arret 
     if (N >= SIZE_MAX - 1) {
+        let runBtn = document.getElementById("run-btn");
+        runBtn.innerHTML = "Calculate";
         return;
     }
     getNewGeneration(newGeneration);
@@ -401,9 +404,42 @@ generationList.push(generation1);
 // generation1.map(item => {
 //     getEquivalentMatrices
 // });
+let runBtn = document.getElementById("run-btn");
+//runBtn.innerHTML = "Running...";
+
 getNewGeneration(generation1);
 console.log("----- END -----");
 console.log(generationList);
+
+
+runBtn && runBtn.addEventListener("click", function (event) {
+    let runBtn = document.getElementById("run-btn");
+    runBtn.innerHTML = "Running...";
+    document.getElementById('main').innerHTML = 'Loading...';
+    setTimeout(() => {
+        generationList = [];
+        N = 0;
+        document.getElementById('main').innerHTML = `
+        <div id="log">
+            <div>1 cell: found 1 free polyominoes in 0 s</div>
+        </div>
+        <div class="separator-line"></div>
+        <div class="nb-cell">1 cell: 1 free polyominoe</div>
+            <div class="polyomino">
+                <div class="line">
+                    <div class="cell white"></div>
+                </div>
+            <div class="name">1.0</div>
+        </div>
+        <div class="separator-line"></div>`;
+        var e = document.getElementById("max-number-of-cell");
+        SIZE_MAX = parseInt(e.value);
+
+        getNewGeneration(generation1);
+    }, 100);
+
+});
+
 // generation length= 4655
 // dt= 4.022
 // generation length= 17073

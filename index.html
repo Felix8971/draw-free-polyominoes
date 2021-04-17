@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <meta name="description" content="Calcul and draw free polyominoes (or square animals)">
+    <meta name="description" content="Find and draw free polyominoes (or square animals)">
     <meta name="keywords" content="free polyominoes">
     <meta name="author" content="Felix DEBON">
     <meta name=" viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +13,54 @@
 
 <body>
     <div id="header">
-        <div id="header-title">Calcul number of free polyominoes with n cells</div>
-        <a href="https://github.com/Felix8971/draw-free-polyominoes/tree/master" target="_blank">Githug repository</a>
+        <div id="header-title">Find and draw free polyominoes (or square animals)</div>
+
+        <p>A polyomino is a plane geometric figure formed by joining one or more equal squares edge to edge. It is a
+            polyform whose cells are squares. It may be regarded as a finite subset of the regular square tiling.
+        </p>
+        <p>Free polyominoes are distinct when none is a rigid transformation (translation, rotation, reflection or
+            glide reflection) of another (pieces that can be picked up and flipped over). Translating, rotating,
+            reflecting, or glide reflecting a free polyomino does not change its shape.</p>
+
+        <p>In this page I calculate the free polyominoes in real time with a simple (and relatively inneficient)
+            algorythm.
+            The polyominoes of the generation N + 1 are calculated from the generation N. For each polyomino of
+            the generation N we try to add a square and create a new element for the generation N + 1.
+            The polyomino created (and all its equivalent form found by translation, rotation, reflection) is compared
+            to the
+            polyominoes already found to determine if it's a new element. </p>
+
+        <a href="https://github.com/Felix8971/draw-free-polyominoes/tree/master" target="_blank">Source code on
+            Github</a>
     </div>
+
+    <div id="form">
+        <label for="maxNumberOfCell">Max number of cell:</label>
+        <select name="maxNumberOfCell" id="max-number-of-cell">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option selected value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+        </select>
+        <button id="run-btn">Running...</button>
+    </div>
+    <div class="separator-line"></div>
+
     <div id="main">
+
+        <div id="log">
+            Log:
+            <div>1 cell: found 1 free polyominoes in 0 s</div>
+        </div>
+        <div class="separator-line"></div>
         <div class="nb-cell">1 cell: 1 free polyominoe</div>
         <div class="polyomino">
             <div class="line">
@@ -27,7 +71,7 @@
         <div class="separator-line"></div>
     </div>
 
-    <script type="text/javascript" src="./src/main.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
 </body>
 
 </html>
